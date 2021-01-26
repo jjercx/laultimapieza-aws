@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gem 'airrecord'
+gem 'dotenv'
+gem 'redcarpet'
+
+group :development, :test do
+  gem 'pry-byebug'
+end
+
+ruby '~> 2.7.0'
