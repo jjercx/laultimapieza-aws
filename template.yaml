@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
   laultimapieza-aws
 
-  SAM app for laultimapieza-aws
+  - Facebook CSV function
 
 Globals:
   Function:
@@ -24,12 +24,12 @@ Resources:
             Method: get
 
 Outputs:
-  HelloWorldApi:
+  FacebookCsvApi:
     Description: "API Gateway endpoint URL for Facebook Csv function"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/facebook.csv"
-  # FacebookCsvFunction:
-  #   Description: "Hello World Lambda Function ARN"
-  #   Value: !GetAtt FacebookCsvFunction.Arn
-  # FacebookCsvFunctionIamRole:
-  #   Description: "Implicit IAM Role created for Hello World function"
-  #   Value: !GetAtt FacebookCsvFunctionRole.Arn
+  FacebookCsvFunction:
+    Description: "Facebook Csv Lambda Function ARN"
+    Value: !GetAtt FacebookCsvFunction.Arn
+  FacebookCsvFunctionIamRole:
+    Description: "Implicit IAM Role created for Facebook Csv function"
+    Value: !GetAtt FacebookCsvFunctionRole.Arn
