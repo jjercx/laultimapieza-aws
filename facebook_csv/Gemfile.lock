@@ -23,7 +23,6 @@ GEM
     pry-byebug (3.9.0)
       byebug (~> 11.0)
       pry (~> 0.13.0)
-    redcarpet (3.5.1)
     ruby2_keywords (0.0.4)
 
 PLATFORMS
@@ -33,7 +32,6 @@ DEPENDENCIES
   airrecord
   dotenv
   pry-byebug
-  redcarpet
 
 RUBY VERSION
    ruby 2.7.0p0

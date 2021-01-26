@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'redcarpet'
-require 'redcarpet/render_strip'
-
 class Product < Airrecord::Table
   self.base_key = ENV['AIRTABLE_BASE_ID']
   self.table_name = 'Producto'
@@ -27,11 +24,7 @@ class Product < Airrecord::Table
   end
 
   def fb_description
-    sanitizer = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
-    # Redcarpet has a bug with multiple new lines inside code block
-    # and also adds newline at the end...
-    # TODO: fix redcarpet or find other lib
-    sanitizer.render(description.delete("\n")).delete("\n")
+    description.delete "\n*_~>#`"
   end
 
   def stock

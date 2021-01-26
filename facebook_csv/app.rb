@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'csv'
+require 'json'
 require_relative 'models/all'
 
 def lambda_handler(event:, context:) # rubocop:disable Lint/UnusedMethodArgument
@@ -16,11 +17,9 @@ def lambda_handler(event:, context:) # rubocop:disable Lint/UnusedMethodArgument
 
   {
     statusCode: 200,
-    body: {
-      message: output,
-      headers: {
-        'Content-Type' => 'application/csv',
-      },
-    }.to_json,
+    body: output,
+    headers: {
+      'Content-Type' => 'application/CSV',
+    },
   }
 end
